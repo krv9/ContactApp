@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.operation</groupId>
+  <artifactId>CrudApp</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>CrudApp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <!-- Dependency Management with Correct Spring Version -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>6.1.16</version>  <!-- ✅ Changed to stable version -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!-- Spring Core Dependencies -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>6.1.16</version>  <!-- ✅ Unified version -->
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>6.1.16</version>  <!-- ✅ Unified version -->
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>6.1.16</version>  <!-- ✅ Added missing dependency -->
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>6.1.16</version>  <!-- ✅ Added missing version -->
+    </dependency>
+
+    <!-- Spring Data JPA -->
+    <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-jpa</artifactId>
+        <version>3.2.3</version>
+    </dependency>
+
+    <!-- MySQL Connector -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.33</version>
+    </dependency>
+
+    <!-- Hibernate -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>6.4.0.Final</version>
+    </dependency>
+
+    <!-- Jakarta Servlet API (For Tomcat 11) -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Jakarta JSTL (For Tomcat 11) -->
+    <dependency>
+        <groupId>jakarta.servlet.jsp.jstl</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        <version>3.0.0</version>  <!-- ✅ Updated to Jakarta version -->
+    </dependency>
+    <!-- Jakarta JSTL Implementation -->
+	<dependency>
+	    <groupId>org.glassfish.web</groupId>
+	    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+	    <version>3.0.0</version>
+	</dependency>
+
+    <!-- JUnit 5 -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.10.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.10.0</version>
+        <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>CrudApp</finalName>
+  </build>
+
+</project>
